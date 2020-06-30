@@ -24,9 +24,13 @@ public class PartidaXadrez {
 		return mat;
 	}
 	
+	private void localNovaPeca(char coluna, int linha, PecaXadrez peca) {
+		mesa.localPeca(peca, new XadrezPosicao(coluna, linha).toPosicao());
+	}
+	
 	private void inicialSetup() {
-		mesa.localPeca(new Torre(mesa, Cor.BRANCO), new Posicao(2, 1));
-		mesa.localPeca(new Rei(mesa, Cor.PRETO), new Posicao(0, 4));
-		mesa.localPeca(new Rei(mesa, Cor.BRANCO), new Posicao(7, 4));
+		localNovaPeca('b',6,new Torre(mesa, Cor.BRANCO));
+		localNovaPeca('e',8,new Rei(mesa, Cor.PRETO));
+		localNovaPeca('e',1,new Rei(mesa, Cor.BRANCO));
 	}
 }
