@@ -1,7 +1,6 @@
 package xadrez;
 
 import mesatabuleiro.Mesa;
-import mesatabuleiro.Posicao;
 import xadrez.pecas.Rei;
 import xadrez.pecas.Torre;
 
@@ -29,8 +28,19 @@ public class PartidaXadrez {
 	}
 	
 	private void inicialSetup() {
-		localNovaPeca('b',6,new Torre(mesa, Cor.BRANCO));
-		localNovaPeca('e',8,new Rei(mesa, Cor.PRETO));
-		localNovaPeca('e',1,new Rei(mesa, Cor.BRANCO));
+		localNovaPeca('c',1,new Torre(mesa, Cor.BRANCO));
+		localNovaPeca('c',2,new Torre(mesa, Cor.BRANCO));
+		localNovaPeca('d',2,new Torre(mesa, Cor.BRANCO));
+		localNovaPeca('e',2,new Torre(mesa, Cor.BRANCO));
+		localNovaPeca('e',1,new Torre(mesa, Cor.BRANCO));
+		localNovaPeca('d',1,new Rei(mesa, Cor.BRANCO));
+		
+		localNovaPeca('c',7,new Torre(mesa, Cor.PRETO));
+		localNovaPeca('c',8,new Torre(mesa, Cor.PRETO));
+		localNovaPeca('d',7,new Torre(mesa, Cor.PRETO));
+		localNovaPeca('e',7,new Torre(mesa, Cor.PRETO));
+		localNovaPeca('e',8,new Torre(mesa, Cor.PRETO));
+		localNovaPeca('d',8,new Rei(mesa, Cor.PRETO));
+		
 	}
 }
