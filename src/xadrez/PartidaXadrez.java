@@ -26,7 +26,7 @@ public class PartidaXadrez {
 	
 	private void inicialSetup() {
 		mesa.localPeca(new Torre(mesa, Cor.BRANCO), new Posicao(2, 1));
-		mesa.localPeca(new Rei(mesa, Cor.PRETO), new Posicao(0,4));
+		mesa.localPeca(new Rei(mesa, Cor.PRETO), new Posicao(0, 4));
 		mesa.localPeca(new Rei(mesa, Cor.BRANCO), new Posicao(7, 4));
 	}
 }
