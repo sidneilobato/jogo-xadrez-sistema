@@ -13,21 +13,25 @@ public class Programa {
 	public static void main(String[] args) {
 	
 		Scanner sc = new Scanner(System.in);
-		PartidaXadrez partidaxadrez = new PartidaXadrez();
+		PartidaXadrez partidaXadrez = new PartidaXadrez();
 		
 		while(true) {
 			try {
 				UI.clearScreen();
-				UI.imprimeMesa(partidaxadrez.getPecas());
+				UI.imprimeMesa(partidaXadrez.getPecas());
 				System.out.println();
 				System.out.print("Origem: ");
 				XadrezPosicao origem = UI.lerXadrezPosicao(sc);
+				
+				boolean[][] possivelMovimentos = partidaXadrez.possivelMovimento(origem);
+				UI.clearScreen();
+				UI.imprimeMesa(partidaXadrez.getPecas(), possivelMovimentos);
 				
 				System.out.println();
 				System.out.print("Destino: ");
 				XadrezPosicao destino = UI.lerXadrezPosicao(sc);
 				
-				PecaXadrez pecaCapturada = partidaxadrez.performXadrezMovimento(origem, destino);
+				PecaXadrez pecaCapturada = partidaXadrez.performXadrezMovimento(origem, destino);
 			}
 			catch(XadrezExcecao e) {
 				System.out.println(e.getMessage());
