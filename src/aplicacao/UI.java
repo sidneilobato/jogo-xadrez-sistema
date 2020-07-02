@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import xadrez.Cor;
@@ -57,9 +56,14 @@ public class UI {
 		imprimePecasCapturadas(capturado);
 		System.out.println();
 		System.out.println("Turno: "+partidaXadrez.getTurno());
-		System.out.println("Aguardando jogador "+partidaXadrez.getJogadorAtual());
-		if(partidaXadrez.getCheck()) {
-			System.out.println("XEQUE!");
+		if(!partidaXadrez.getCheckMate()) {
+			System.out.println("Aguardando jogador "+partidaXadrez.getJogadorAtual());
+			if(partidaXadrez.getCheck()) {
+				System.out.println("XEQUE!");
+			}
+		}else {
+			System.out.println("XEQUE MATE.");
+			System.out.println("Vencedor: "+partidaXadrez.getJogadorAtual());
 		}
 	}
 	
